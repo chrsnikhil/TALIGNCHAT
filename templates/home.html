@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room Entry</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="home-content">
+        <div class="home-message-box">
+            <h3>TALIGN</h3>
+            <form method="post" class="home-form">
+                <div class="home-inputs">
+                    <input type="text" placeholder="Your Name" name="name" value="{{ name }}" required/>
+                    <input type="text" placeholder="Room Code" name="code" value="{{ code }}"/>
+                </div>
+                <div class="home-buttons">
+                    <button type="submit" name="join" value="true">Join a Room</button>
+                    <button type="submit" name="create" value="true">Create a Room</button>
+                </div>
+                {% if error %}
+                    <p class="home-error">{{ error }}</p>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</body>
+</html>
